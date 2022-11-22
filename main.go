@@ -14,7 +14,9 @@ type ExpoIdle struct {
 
 func main() {
 	e := math.Exp(1)
-	c2 := 100
+	var c2 int
+	fmt.Printf("Max C2: ")
+	fmt.Scanf("%d\n", &c2)
 	res := make([]ExpoIdle, 0, c2)
 	for i := 1; i < c2; i++ {
 		ifloat64 := float64(i)
@@ -40,5 +42,5 @@ func main() {
 		return res[i].Diff < res[j].Diff
 	})
 	best := res[0]
-	fmt.Println(best.C1, best.C2, best.Diff)
+	fmt.Printf("Best (c1, c2) => (%v, %v), diff: %v\n", best.C1, best.C2, best.Diff)
 }
